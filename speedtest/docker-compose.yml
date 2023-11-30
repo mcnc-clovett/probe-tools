@@ -3,4 +3,5 @@ services:
   speedtest:
     image: "mcncclovett/speedtest"
     container_name: "speedtest"
+    restart: "unless-stopped"
     network_mode: "host"

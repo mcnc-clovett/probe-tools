@@ -6,6 +6,7 @@ services:
     image: "mcncclovett/cacti:latest"
     container_name: cacti
     hostname: cacti
+    restart: unless-stopped
     ports:
       - "443:443"
     environment:
@@ -31,6 +32,7 @@ services:
     image: "mariadb:latest"
     container_name: cacti_db
     hostname: db
+    restart: unless-stopped
     command:
       - mariadbd
       - --character-set-server=utf8mb4
