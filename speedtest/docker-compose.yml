@@ -1,0 +1,6 @@
+version: '3'
+services:
+  speedtest:
+    image: "mcncclovett/speedtest"
+    container_name: "speedtest"
+    network_mode: "host"

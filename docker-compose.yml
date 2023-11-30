@@ -1,0 +1,11 @@
+include:
+  - path: ./cacti/docker-compose.yml
+    project_directory: .
+  - path: ./smokeping/docker-compose.yml
+    project_directory: .
+  - path: ./speedtest/docker-compose.yml
+    project_directory: .
+  - path: ./uptime-kuma/docker-compose.yml
+    project_directory: .
+  - path: ./portainer/docker-compose.yml
+    project_directory: .

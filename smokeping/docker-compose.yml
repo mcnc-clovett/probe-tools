@@ -1,0 +1,24 @@
+version: '3'
+services:
+  smokeping:
+    image: "linuxserver/smokeping"
+    container_name: smokeping
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      - TZ=America/New_York
+    volumes:
+      - smokeping-data:/data
+      - smokeping-config:/config
+    networks:
+      smokeping:
+volumes:
+  smokeping-data:
+  smokeping-config:
+networks:
+  smokeping:
+    ipam:
+      driver: default
+      config:
+        - subnet: 203.0.113.8/29

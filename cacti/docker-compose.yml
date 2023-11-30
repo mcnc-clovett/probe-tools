@@ -1,0 +1,68 @@
+version: '2'
+services:
+
+
+  cacti:
+    image: "mcncclovett/cacti:latest"
+    container_name: cacti
+    hostname: cacti
+    ports:
+      - "443:443"
+    environment:
+      - APACHE_RUN_DIR=/var/run/apache2
+      - DB_NAME=cacti_master
+      - DB_USER=cactiuser
+      - DB_PASS=cactipassword
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_ROOT_PASS=rootpassword
+      - INITIALIZE_DB=1
+      - TZ=America/New_York
+    volumes:
+      - cacti-data:/cacti
+      - cacti-spine:/spine
+      - cacti-backups:/backups
+    networks:
+      cacti:
+    depends_on:
+      - db
+
+  db:
+    image: "mariadb:latest"
+    container_name: cacti_db
+    hostname: db
+    command:
+      - mariadbd
+      - --character-set-server=utf8mb4
+      - --collation-server=utf8mb4_unicode_ci
+      - --max_connections=200
+      - --max_heap_table_size=128M
+      - --max_allowed_packet=32M
+      - --tmp_table_size=128M
+      - --join_buffer_size=128M
+      - --innodb=ON
+      - --innodb_buffer_pool_size=1G
+      - --innodb_doublewrite=OFF
+      - --innodb_flush_log_at_timeout=3
+      - --innodb_read_io_threads=32
+      - --innodb_write_io_threads=16
+      - --innodb_io_capacity=5000
+      - --innodb_io_capacity_max=10000
+    environment:
+      - MARIADB_ROOT_PASSWORD=rootpassword
+      - TZ=America/New_York
+    volumes:
+      - cacti-mysql:/var/lib/mysql
+    networks:
+      cacti:
+volumes:
+  cacti-data:
+  cacti-spine:
+  cacti-backups:
+  cacti-mysql:
+networks:
+  cacti:
+    ipam:
+      driver: default
+      config:
+        - subnet: 203.0.113.24/29
