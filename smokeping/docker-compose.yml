@@ -11,6 +11,11 @@ services:
     volumes:
       - smokeping-data:/data
       - smokeping-config:/config
+    healthcheck:
+      start_period: 30s
+      timeout: 3s
+      interval: 30s
+      test: "bash -c 'cat < /dev/null > /dev/tcp/localhost/80' || exit 1"
     networks:
       smokeping:
 volumes:
