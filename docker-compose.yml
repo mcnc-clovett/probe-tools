@@ -1,3 +1,4 @@
+name: mcnc-probe
 include:
   - path: ./cacti/docker-compose.yml
     project_directory: .
