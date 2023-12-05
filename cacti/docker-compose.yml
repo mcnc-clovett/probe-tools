@@ -18,7 +18,7 @@ services:
       - DB_PORT=3306
       - DB_ROOT_PASS=rootpassword
       - INITIALIZE_DB=1
-      - TZ=America/New_York
+      - TZ=${TZ:-America/New_York}
     volumes:
       - cacti-data:/cacti
       - cacti-spine:/spine
@@ -63,7 +63,7 @@ services:
       - --innodb_io_capacity_max=10000
     environment:
       - MARIADB_ROOT_PASSWORD=rootpassword
-      - TZ=America/New_York
+      - TZ=${TZ:-America/New_York}
     volumes:
       - cacti-mysql:/var/lib/mysql
     healthcheck:
