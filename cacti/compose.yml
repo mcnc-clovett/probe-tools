@@ -28,8 +28,6 @@ services:
       timeout: 3s
       interval: 30s
       test: "bash -c 'cat < /dev/null > /dev/tcp/localhost/443' || exit 1"
-    networks:
-      cacti:
     depends_on:
       - db
     labels:
@@ -71,16 +69,8 @@ services:
       timeout: 3s
       interval: 30s
       test: "bash -c 'cat < /dev/null > /dev/tcp/localhost/3306' || exit 1"
-    networks:
-      cacti:
 volumes:
   cacti-data:
   cacti-spine:
   cacti-backups:
   cacti-mysql:
-networks:
-  cacti:
-    ipam:
-      driver: default
-      config:
-        - subnet: 203.0.113.24/29

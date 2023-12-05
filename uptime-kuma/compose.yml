@@ -12,8 +12,6 @@ services:
     volumes:
       - uptime-kuma:/app/data
       - /var/run/docker.sock:/var/run/docker.sock
-    networks:
-      uptime-kuma:
     labels:
       - homepage.group=Monitoring
       - homepage.name=Uptime Kuma
@@ -22,9 +20,3 @@ services:
       - homepage.description=Uptime monitor
 volumes:
   uptime-kuma:
-networks:
-  uptime-kuma:
-    ipam:
-      driver: default
-      config:
-        - subnet: 203.0.113.16/29

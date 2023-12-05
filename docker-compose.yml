@@ -1,4 +1,0 @@
-name: mcnc-probe
-include:
-  - path: ./docker-compose.base.yml
-  - path: ./docker-compose.probe.yml

@@ -16,8 +16,6 @@ services:
       timeout: 3s
       interval: 30s
       test: "bash -c 'cat < /dev/null > /dev/tcp/localhost/80' || exit 1"
-    networks:
-      smokeping:
     labels:
       - homepage.group=Monitoring
       - homepage.name=Smokeping
@@ -27,9 +25,3 @@ services:
 volumes:
   smokeping-data:
   smokeping-config:
-networks:
-  smokeping:
-    ipam:
-      driver: default
-      config:
-        - subnet: 203.0.113.8/29

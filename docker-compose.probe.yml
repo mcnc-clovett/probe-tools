@@ -1,6 +1,0 @@
-name: mcnc-probe
-include:
-  - path: ./cacti/docker-compose.yml
-  - path: ./smokeping/docker-compose.yml
-  - path: ./speedtest/docker-compose.yml
-  - path: ./uptime-kuma/docker-compose.yml

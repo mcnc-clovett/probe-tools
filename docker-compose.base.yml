@@ -1,5 +1,0 @@
-name: mcnc-base
-include:
-  - path: ./portainer/docker-compose.yml
-  - path: ./homepage/docker-compose.yml
-  - path: ./netdata/docker-compose.yml

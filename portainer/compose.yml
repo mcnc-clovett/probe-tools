@@ -11,8 +11,6 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
       - portainer-data:/data
-    networks:
-      - portainer
     labels:
       - homepage.group=Management
       - homepage.name=Portainer
@@ -21,9 +19,3 @@ services:
       - homepage.description=Docker container management
 volumes:
   portainer-data:
-networks:
-  portainer:
-    ipam:
-      driver: default
-      config:
-        - subnet: 203.0.113.0/29
