@@ -18,6 +18,12 @@ services:
       test: "bash -c 'cat < /dev/null > /dev/tcp/localhost/80' || exit 1"
     networks:
       smokeping:
+    labels:
+      - homepage.group=Monitoring
+      - homepage.name=Smokeping
+      - homepage.icon=mdi-chart-bar-stacked
+      - homepage.href=http://${PROBE}:8081/
+      - homepage.description=Latency and ping grapher
 volumes:
   smokeping-data:
   smokeping-config:

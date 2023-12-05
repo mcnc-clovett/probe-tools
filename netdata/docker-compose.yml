@@ -27,7 +27,7 @@ services:
       - homepage.group=Monitoring
       - homepage.name=Netdata
       - homepage.icon=mdi-network-pos
-      - homepage.href=http://192.168.100.114:19999/
+      - homepage.href=http://${PROBE}:19999/
       - homepage.description=Monitor the network probe
 
 volumes:

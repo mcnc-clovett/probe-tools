@@ -14,6 +14,12 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       uptime-kuma:
+    labels:
+      - homepage.group=Monitoring
+      - homepage.name=Uptime Kuma
+      - homepage.icon=si-uptimekuma
+      - homepage.href=http://${PROBE}:3000/
+      - homepage.description=Uptime monitor
 volumes:
   uptime-kuma:
 networks:

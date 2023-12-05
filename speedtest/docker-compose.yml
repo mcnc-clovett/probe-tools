@@ -10,3 +10,9 @@ services:
       timeout: 3s
       interval: 30s
       test: "curl -f http://localhost:80 || exit 1"
+    labels:
+      - homepage.group=Testing
+      - homepage.name=Speedtest
+      - homepage.icon=si-speedtest
+      - homepage.href=http://${PROBE}/
+      - homepage.description=Docker container management

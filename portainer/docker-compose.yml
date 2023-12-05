@@ -13,7 +13,12 @@ services:
       - portainer-data:/data
     networks:
       - portainer
-
+    labels:
+      - homepage.group=Management
+      - homepage.name=Portainer
+      - homepage.icon=si-portainer
+      - homepage.href=https://${PROBE}:9443/
+      - homepage.description=Docker container management
 volumes:
   portainer-data:
 networks:

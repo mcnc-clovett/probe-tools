@@ -32,6 +32,12 @@ services:
       cacti:
     depends_on:
       - db
+    labels:
+      - homepage.group=Monitoring
+      - homepage.name=Cacti
+      - homepage.icon=mdi-cactus
+      - homepage.href=https://${PROBE}/
+      - homepage.description=SNMP grapher
 
   db:
     image: "mariadb:latest"
