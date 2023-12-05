@@ -1,0 +1,17 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/widgets
+
+- logo:
+    icon: https://raw.githubusercontent.com/mcnc-clovett/cdn/master/images/mcnc/mcnc_cne_white.svg
+
+- resources:
+    cpu: true
+    memory: true
+    disk: /
+    refresh: 3000
+
+- search:
+    provider: [brave]
+    target: _blank
+

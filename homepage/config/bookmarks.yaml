@@ -1,0 +1,31 @@
+---
+# For configuration options and examples, please see:
+# https://gethomepage.dev/latest/configs/bookmarks
+
+- MCNC Links:
+    - Homepage:
+        - abbr: HP
+          href: https://mcnc.org/
+    - MCNC Portal:
+        - abbr: POR
+          href: https://portal.mcnc.org/
+    - CNE Github Docs:
+        - abbr: DOC
+          href: https://mcnc-clovett.github.io/
+    - Youtube Channel:
+        - abbr: YT
+          href: https://www.youtube.com/@MCNCvideos
+- Create a MCNC Ticket:
+    - General Support:
+        - abbr: SYS
+          href: mailto:support@mcnc.org
+    - Client Network Engineering Support:
+        - abbr: CNE
+          href: mailto:cne@mcnc.org
+    - Security / Firewall Support:
+        - abbr: SEC
+          href: mailto:secops@mcnc.org
+- Useful Links:
+    - NC Cyber Security Resources:
+        - abbr: NCSU
+          href: https://sci.fi.ncsu.edu/cybersecurity/
